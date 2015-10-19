@@ -11,13 +11,14 @@
 		<h2>Pizzas</h2>
 		<ul ng-repeat="pizza in pizzas">
 			<h3>{{pizza.name}}</h3>
-			<li>{{pizza.price}}</li>
+			<li><strong>Price: </strong>{{pizza.price | currency }}</li>
 			<li>{{pizza.description}}</li>
-			<li>{{pizza.glutenFree}}</li>
-			<li><span ng-repeat="topping in pizza.toppings">{{topping}}, </span></li>
+			<li><strong>Ingredients: </strong><span ng-repeat="topping in pizza.toppings">{{topping}}, </span></li>
 			<li><img ng-src="{{pizza.picture}}"></li>
 		</ul>
 		<script src="../js/main.js"></script>
 		<script src="../js/pizzafactory.js"></script>
 	</body>
 </html>
+
+<!-- GROUP : danielle, edward, josh, joannie, paula -->

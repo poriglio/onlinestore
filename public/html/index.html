@@ -4,10 +4,20 @@
 		<meta charset="utf-8">
 		<title>Pizza Fusion</title>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-resource.js"></script>
 	</head>
 	<body ng-controller="pizzaController">
 		<h1>Welcome to Pizza Fusion!</h1>
 		<h2>{{greeting}}</h2>
+		<button ng-hide="hideButton" ng-click="showForm()" type="button">Add pizza...</button>
+		<form ng-submit="createPizza()" ng-show="formShown">
+			<input type="text" placeholder="name" ng-model="newPizza.name">
+			<input type="text" placeholder="price" ng-model="newPizza.price">
+			<input type="text" placeholder="description" ng-model="newPizza.description">
+			<input type="text" placeholder="toppings" ng-model="newPizza.toppings">
+			<input type="text" placeholder="picture" ng-model="newPizza.picture">
+			<input type="submit">
+		</form>
 		<h2>Pizzas</h2>
 		<ul ng-repeat="pizza in pizzas">
 			<h3>{{pizza.name}}</h3>

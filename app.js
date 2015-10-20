@@ -20,6 +20,10 @@ app.get("/",function(request,response){
 	response.sendFile("/html/index.html",{root:"./public"})
 })
 
+app.post("/api/submitpizza",function(request,response){
+	console.log(request.body)
+	response.send(request.body)
+})
 
 // CREATE SERVER AND LSITEN FOR CONNECTIONS
 

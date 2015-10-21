@@ -16,14 +16,13 @@ app.use(express.static(__dirname + "/public"))
 
 // ROUTES
 
+var pizzaMaker = require("./controllers/controller.js")
+
 app.get("/",function(request,response){
 	response.sendFile("/html/index.html",{root:"./public"})
 })
 
-app.post("/api/submitpizza",function(request,response){
-	console.log(request.body)
-	response.send(request.body)
-})
+app.post("/api/submitpizza",pizzaMaker.createPizza)
 
 // CREATE SERVER AND LSITEN FOR CONNECTIONS
 

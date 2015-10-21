@@ -24,6 +24,8 @@ app.get("/",function(request,response){
 
 app.post("/api/submitpizza",pizzaMaker.createPizza)
 
+app.get("/api/pizzas",pizzaMaker.findPizzas)
+
 // CREATE SERVER AND LSITEN FOR CONNECTIONS
 
 var port = 3000

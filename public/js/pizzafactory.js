@@ -1,11 +1,8 @@
-angular.module("pizzaApp").factory("pizzaFactory",function(){
+angular.module("pizzaApp").factory("pizzaFactory",function($resource){
 
-	var pizzas = []
-
-	
+	var pizzas = $resource("/api/pizzas")
 
 	return {
-		pizzas : pizzas
+		pizzas : pizzas.query()
 	}
-
 })

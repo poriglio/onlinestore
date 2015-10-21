@@ -5,6 +5,7 @@ angular.module("pizzaApp").controller("pizzaController",["$scope","$http","pizza
 	$scope.greeting = "pizza + thing = thing pizza"
 
 	$scope.pizzas = pizzaFactory.pizzas
+	console.log(pizzaFactory.pizzas)
 
 	$scope.showForm = function(){
 		$scope.formShown=true;

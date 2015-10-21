@@ -16,6 +16,19 @@ var createPizza = function(request,response){
 
 }
 
+var findPizzas = function(request,response){
+	Pizza.find({},function(error,docs){
+		if(error){
+			console.log("error!")
+		}
+		else{
+			console.log(docs)
+			response.send(docs)
+		}
+	})
+}
+
 module.exports = {
 	createPizza : createPizza,
+	findPizzas  : findPizzas,
 }

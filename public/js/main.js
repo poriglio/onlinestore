@@ -16,8 +16,18 @@ angular.module("pizzaApp").controller("pizzaController",["$scope","$http","pizza
 		$scope.hideButton=false;
 		$scope.formShown=false;
 		$http.post("/api/submitpizza",$scope.newPizza).then(function(returnData){
-			console.log("Made a pizza!",returnData)
+			
 		})
+	}
+
+}])
+
+angular.module("pizzaApp").controller("cartController",["$scope","$http","cartFactory",function($scope,$http,cartFactory){
+
+	$scope.greeting = "I hope you're hungry..."
+
+	$scope.addToCart = function(){
+		console.log("You're shopping!")
 	}
 
 }])

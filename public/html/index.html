@@ -10,6 +10,7 @@
 		<h1>Welcome to Pizza Fusion!</h1>
 		<h2>{{greeting}}</h2>
 		<button ng-hide="hideButton" ng-click="showForm()" type="button">Add pizza...</button>
+		<button type="button"><a href="/viewcart">View your cart...</a></button>
 		<form ng-submit="createPizza()" ng-show="formShown">
 			<input type="text" placeholder="name" ng-model="newPizza.name">
 			<input type="text" placeholder="price" ng-model="newPizza.price">
@@ -21,6 +22,7 @@
 		<h2>Pizzas</h2>
 		<ul ng-repeat="pizza in pizzas">
 			<h3>{{pizza.name}}</h3>
+			<button type="button" ng-click="addToCart()">Add to cart...</button>
 			<li><strong>Price: </strong>{{pizza.price | currency }}</li>
 			<li>{{pizza.description}}</li>
 			<li><strong>Ingredients: </strong><span ng-repeat="topping in pizza.toppings">{{topping}}, </span></li>
@@ -30,5 +32,3 @@
 		<script src="../js/pizzafactory.js"></script>
 	</body>
 </html>
-
-<!-- GROUP : danielle, edward, josh, joannie, paula -->

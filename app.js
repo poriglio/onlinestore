@@ -22,6 +22,10 @@ app.get("/",function(request,response){
 	response.sendFile("/html/index.html",{root:"./public"})
 })
 
+app.get("/viewcart",function(request,response){
+	response.sendFile("/html/cart.html",{root:"./public"})
+})
+
 app.post("/api/submitpizza",pizzaMaker.createPizza)
 
 app.get("/api/pizzas",pizzaMaker.findPizzas)

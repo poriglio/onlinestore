@@ -13,10 +13,18 @@ angular.module("pizzaApp").controller("pizzaController",["$scope","$http","pizza
 	}
 
 	$scope.createPizza = function(){
-		$scope.hideButton=false;
 		$scope.formShown=false;
+		$scope.hideButton=false;
 		$http.post("/api/submitpizza",$scope.newPizza).then(function(returnData){
 			
+		})
+	}
+
+	$scope.addToCart = function($index){
+		console.log($index)
+		$scope.cartPizza = $scope.pizzas[$index]
+		$http.post("/api/addtocart",$scope.cartPizza).then(function(returnData){
+			console.log("Selected pizza: " + returnData.data)
 		})
 	}
 
@@ -26,8 +34,6 @@ angular.module("pizzaApp").controller("cartController",["$scope","$http","cartFa
 
 	$scope.greeting = "I hope you're hungry..."
 
-	$scope.addToCart = function(){
-		console.log("You're shopping!")
-	}
+	$scope.pizzas = cartFactory.pizzas
 
 }])
